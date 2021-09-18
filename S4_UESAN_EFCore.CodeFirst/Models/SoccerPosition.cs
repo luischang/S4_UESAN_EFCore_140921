@@ -8,19 +8,18 @@ using System.Threading.Tasks;
 
 namespace S4_UESAN_EFCore.CodeFirst.Models
 {
-    [Table("Player")]
-    public class Player
+    [Table("SoccerPosition")]
+    public class SoccerPosition
     {
         [Key]
         public int Id { get; set; }
         [Column(TypeName ="nvarchar(100)")]
-        public string FullName { get; set; }
-        [Column(TypeName = "int")]
-        public int Dorsal { get; set; }
-        [Column(TypeName = "bit")]
-        public bool Status { get; set; }
-        public int SoccerPositionId { get; set; }
-        public virtual SoccerPosition SoccerPosition { get; set; }
+        public string Description { get; set; }
+        [Column(TypeName = "nvarchar(2)")]
+        public string Code { get; set; }
+
+
+        public virtual List<Player> Player { get; set; }
 
     }
 }
